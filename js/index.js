@@ -63,6 +63,40 @@ var app = {
       });
     },
 
+    capturePhoto: function(){
+    navigator.camera.getPicture(uploadPic,null,{sourceType:1,quality:60});
+    },   
+
+    uploadPic: function(data){
+    // this is where you would send the image file to server
+
+    smallImage.src = "data:image/jpeg;base64," + data;
+    // Successful upload to the server
+    navigator.notification.alert(
+        'Your Photo has been uploaded',  // message
+        okay,                           // callback
+        'Photo Uploaded',              // title
+        'OK'                          // buttonName
+    );
+
+    // upload has failed Fail
+
+    /* 
+
+    if (failedToUpload){
+
+    navigator.notification.alert(
+        'Your Photo has failed to upload',
+        failedDismissed,
+        'Photo Not Uploaded',
+        'OK'
+        );
+
+    } 
+    */
+
+
+    },
 
     onPhotoURISuccess: function(imageURI){
 
