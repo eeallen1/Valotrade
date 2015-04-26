@@ -30,8 +30,10 @@
             <h1>PhoneGap</h1>
          
 
-                <button onclick="capturePhoto(pictureSource.PHOTOLIBRARY);">Take Picture</button><br>
-                <button onclick="capturePhoto(pictureSource.Camera);">Browse</button>
+                <button onclick="capturePhoto(pictureSource.PHOTOLIBRARY);">Browse</button><br>
+                <button onclick="capturePhoto(pictureSource.CAMERA);">Take Picture</button>
+
+                <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
 
           </div>
         <script type="text/javascript" src="phonegap.js"></script>
