@@ -8,13 +8,14 @@
   </head>
   <body>
     <form id="regform">
-       <button onclick="capturePhoto(pictureSource.PHOTOLIBRARY);">Take Picture</button>
-                <button onclick="capturePhoto(pictureSource.Camera);">Browse</button>
-        <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+       <button onclick="capturePhoto(pictureSource.PHOTOLIBRARY);">Browse</button>
+                <button onclick="capturePhoto(pictureSource.CAMERA);">Take Picture</button>
 
         
         <input type="button" id="btnSubmit" value="Submit" onclick="uploadPhoto();">
     </form>
+
+    <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
 
       <script type="text/javascript" src="phonegap.js"></script>
     <script type="text/javascript" src="js/cam.js"></script>
