@@ -15,6 +15,9 @@ function clearCache() {
 var retries = 0;
 function onCapturePhoto(fileURI) {
     var win = function (r) {
+        var smallImage = document.getElementById('smallImage'); 
+        smallImage.style.display = 'block';
+        smallImage.src = fileURI;
         clearCache();
         retries = 0;
         alert('Done!');
@@ -25,11 +28,11 @@ function onCapturePhoto(fileURI) {
             retries ++
             setTimeout(function() {
                 onCapturePhoto(fileURI)
-            }, 1000)
+            }, 750)
         } else {
             retries = 0;
             clearCache();
-            alert('Ups. Something wrong happens!');
+            alert('Error. Try again!');
         }
     }
  
@@ -42,10 +45,10 @@ function onCapturePhoto(fileURI) {
     ft.upload(fileURI, encodeURI("http://107.170.157.210/ServerPHP/upload.php"), win, fail, options);
 }
  
-function capturePhoto() {
+function capturePhoto(source) {
     navigator.camera.getPicture(onCapturePhoto, onFail, {
-        quality: 100,
-        destinationType: destinationType.FILE_URI
+        quality: 50,
+        destinationType: destinationType.FILE_URI, sourceType: source
     });
 }
  
