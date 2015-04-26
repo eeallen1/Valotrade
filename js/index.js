@@ -18,8 +18,8 @@
  */
 var app = {
 
-      var pictureSource;   // picture source
-      var destinationType; // sets the format of returned value
+      //var pictureSource;   // picture source
+      //var destinationType; // sets the format of returned value
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -48,6 +48,19 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+
+     takePicture: function() {
+      navigator.camera.getPicture( function( imageURI ) {
+        alert( imageURI );
+      },
+      function( message ) {
+        alert( message );
+      },
+      {
+        quality: 50,
+        destinationType: Camera.DestinationType.FILE_URI
+      });
     },
 
 
