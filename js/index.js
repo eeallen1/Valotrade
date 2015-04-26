@@ -17,6 +17,9 @@
  * under the License.
  */
 var app = {
+
+      var pictureSource;   // picture source
+      var destinationType; // sets the format of returned value
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -47,16 +50,66 @@ var app = {
         console.log('Received Event: ' + id);
     },
 
-    takePicture: function() {
-      navigator.camera.getPicture( function( imageURI ) {
-        alert( imageURI );
-      },
-      function( message ) {
-        alert( message );
-      },
-      {
-        quality: 50,
-        destinationType: Camera.DestinationType.FILE_URI
-      });
+
+    onPhotoURISuccess: function(imageURI){
+
+        //Show the selected image
+        var smallImage = document.getElementById('smallImage');
+        smallImage.style.display = 'block';
+        smallImage.src = imageURI;
+
+    },
+
+    getPhoto: function(source){
+
+      pictureSource = navigator.camera.PictureSourceType;
+      destinationType = navigator.camera.DestinationType;
+         // Retrieve image file location from specified source
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+        destinationType: destinationType.FILE_URI,
+        sourceType: source });
+
+    },
+
+    uploadPhoto: function(){
+
+          //selected photo URI is in the src attribute (we set this on getPhoto)
+        var imageURI = document.getElementById('smallImage').getAttribute("src");
+        if (!imageURI) {
+            alert('Please select an image first.');
+            return;
+        }
+
+        //set upload options
+        var options = new FileUploadOptions();
+        options.fileKey = "file";
+        options.fileName = imageURI.substr(imageURI.lastIndexOf('/')+1);
+        options.mimeType = "image/jpeg";
+
+        options.params = {
+            firstname: document.getElementById("firstname").value,
+            lastname: document.getElementById("lastname").value,
+            workplace: document.getElementById("workplace").value
+        }
+
+        var ft = new FileTransfer();
+        ft.upload(imageURI, encodeURI("http://107.170.157.210/ServerPHP/upload.php"), win, fail, options);
+    },
+
+    onFail: function(messsage){
+         console.log('Failed because: ' + message);
+    },
+
+    win: function(r) {
+        console.log("Code = " + r.responseCode);
+        console.log("Response = " + r.response);
+        //alert("Response =" + r.response);
+        console.log("Sent = " + r.bytesSent);
+    },
+
+    fail: function(error) {
+        alert("An error has occurred: Code = " + error.code);
+        console.log("upload error source " + error.source);
+        console.log("upload error target " + error.target);
     }
 };
