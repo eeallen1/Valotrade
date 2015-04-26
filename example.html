@@ -33,12 +33,13 @@
                 <div class="event received">
                   <p>Device is Ready</p>
                 </div>
-
+             <button onclick="app.capturePhoto();">Select Photo:</button><br>
+              <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
 
         <form id="regform">
-        <button onclick="app.capturePhoto();">Select Photo:</button><br>
+
         <!-- <button onclick="app.getPhoto(pictureSource.PHOTOLIBRARY);">Select Photo:</button><br> -->
-        <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+       
 
         First Name: <input type="text" id="firstname" name="firstname"><br>
         Last Name: <input type="text" id="lastname" name="lastname"><br>
