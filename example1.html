@@ -28,17 +28,12 @@
     <body>
         <div class="app">
             <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <div class="event received">
-                  <p>Device is Ready</p>
-                </div>
+         
 
-                <button onclick="app.takePicture();">Take Picture</button>
-            </div>
-        </div>
+                <button onclick="capturePhoto();">Take Picture</button>
+          </div>
         <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index1.js"></script>
+        <script type="text/javascript" src="js/cam.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
