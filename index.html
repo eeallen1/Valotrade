@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+	
+    <title>Trading Post</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<!-- jQueryMobileCSS - styling-->
+		<link rel="stylesheet" href="css/jqeury.mobile.theme.min.css" />
+				
+		<!-- jQueryMobile icons -->
+		<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+		
+		<!-- jQueryMobile core CSS -->
+		<link rel="stylesheet" href="css/jquery.mobile.min.css" />
+		
+		<!-- Owl Theme -->
+		<link rel="stylesheet" href="css/owl.theme.css">
+				
+		<!-- NIGHTLY style -->
+		<link rel="stylesheet" href="css/nightly.css" />
+				
+		<!-- Load Google Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic|Oswald:400,700' rel='stylesheet' type='text/css'>
+		
+		<!-- Load Font Awesome Icons -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		
+    <!-- jQuery -->
+		<script src="js/jquery.min.js"></script>
+		
+		<!-- jQueryMobile -->
+		<script src="js/jquery.mobile.min.js"></script>
+		
+		<!-- Owl Carousel -->
+		<script src="js/owl.carousel.min.js"></script>
+		
+		<!-- NIGHTLY JS -->
+		<script src="js/nightly.js"></script>
+	
+
+	<!-- ajax request to server -->
+<!-- 
+	<script charset="utf&minus;8" type="text/javascript">
+	function connect(e)
+	{
+	var term= {button:e};
+	$.ajax({
+	url:'http://107.170.157.210/ServerPHP/reply.php',
+	type:'POST',
+	data:term,
+	dataType:'json',
+	error:function(jqXHR,text_status,strError){
+	alert('no connection');},
+	timeout:60000,
+	success:function(data){
+	$("#result").html("");
+	for(var i in data){
+	$("#result").append("<li>"+data[i]+"</li>");
+	}
+	}
+	});}
+	</script>
+	 -->
+	<!-- end ajax -->
+
+    <title>Valotrade</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		
+    </head>
+    <body>
+    
+        <div data-role="page" data-theme='a'>
+        
+            <div data-role="panel" data-display="push" id="sidebar" data-theme="d">
+                <ul data-role="listview">
+                    <li data-icon='home' class="ui-icon-alt"><a href="index.html">Home</a>
+                    </li>
+					<hr>
+                    <li data-icon='star'><a href="post.html">Make a Listing</a>
+                    </li>
+					<hr>
+                    <li data-icon='search'> <a href="search_results_example.html">View Listings</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <form id="searchform" data-theme="a">
+                <input data-role="none" class="nightly-input" type="text" name="s" placeholder="Search for a book" />
+                <input data-role="none" class="nightly-button" type="submit" name="submit" value="" />
+            </form>
+    
+            <div data-role="header" data-tap-toggle="false" data-theme='a'>
+                <a href='#sidebar'data-role="none"><img src="images/menu-icon.png" alt="sidebar" id="header-menu-icon" /></a>
+                <h1 class="header-title">Valotrade</h1>
+                <a href='#' data-role="none" id="a-search"><img src="images/search-icon.png" alt="search" id="header-search-icon" /></a>
+            </div>
+            
+            <div data-role="content">
+            
+                <h3>Find, Trade, or Sell Textbooks</h3>
+				<table width ="100%" border="0" cellpadding ="0" cellspacing="0">
+				<tr>
+				
+				
+				
+				<!-- <center><b>Find, Trade, or Sell Textbooks</b></center> -->
+				<!-- <center><input onclick="connect(this.value)" type="button" value="Post your book" /></center> -->
+				<center><input type="button" onclick="location.href='post.html'" value="List your book" /></center>
+				<center><input onclick="location.href='search.html'" type="button" value="Find a book" /></center>
+				<!-- <center><b>Results</b></center> -->
+				<ul id="result"></ul>
+				
+				<tr>
+				
+				
+				</table> 
+				
+                <ul data-role="listview" data-inset="false" data-icon="false" data-divider-theme="a" class="nightly-navigation">
+                    <li data-role="list-divider">Categories</li>
+                    <li><a href="upload.html" data-ajax="true"><i></i>Biology</a></li>
+                    <li><a href="upload.html" data-ajax="true"><i></i>Math</a></li>
+                    <li><a href="http://107.170.157.210/EliSeniorProject/pgb-example-camera-master/www/" data-ajax="false"><i></i>Computer Science</a></li>
+                    <li><a href="about.html" data-ajax="false"><i></i>History</a></li>
+					<li><a href="about.html" data-ajax="false"><i></i>Chemistry</a></li>
+					<li><a href="about.html" data-ajax="false"><i></i>Art</a></li>   
+					<li><a href="about.html" data-ajax="false"><i></i>Psychology</a></li>
+				    <li><a href="about.html" data-ajax="false"><i></i>Philosophy</a></li>
+					<li><a href="about.html" data-ajax="false"><i></i>Engineering</a></li>
+					<li><a href="about.html" data-ajax="false"><i></i>Sociology/Anthropology</a></li>
+					<li><a href="about.html" data-ajax="false"><i></i>Physics/Astronomy</a></li>
+					<li><a href="about.html" data-ajax="false"><i></i>Education</a></li>
+					<li><a href="about.html" data-ajax="false"><i></i>Theatre</a></li>
+                </ul>
+
+            </div>
+            
+            
+        </div>
+        
+       
+
+    </body>
+</html>

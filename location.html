@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Nightly - User Location Service</title>
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
+    		<!-- jQueryMobileCSS - styling-->
+    		<link rel="stylesheet" href="css/jqeury.mobile.theme.min.css" />
+    				
+    		<!-- jQueryMobile icons -->
+    		<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+    		
+    		<!-- jQueryMobile core CSS -->
+    		<link rel="stylesheet" href="css/jquery.mobile.min.css" />
+    				
+    		<!-- NIGHTLY style -->
+    		<link rel="stylesheet" href="css/nightly.css" />
+    				
+    		<!-- Load Google Fonts -->
+    		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic|Oswald:400,700' rel='stylesheet' type='text/css'>
+    		
+    		<!-- Load Font Awesome Icons -->
+    		<link rel="stylesheet" href="css/font-awesome.min.css">
+    		
+    		<!-- jQuery -->
+    		<script src="js/jquery.min.js"></script>
+    		
+    		<!-- jQueryMobile -->
+    		<script src="js/jquery.mobile.min.js"></script>
+    		
+    		<!-- NIGHTLY JS -->
+    		<script src="js/nightly.js"></script>
+    		
+    		<!-- Google maps API -->
+    		<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+
+    </head>
+    <body>
+    
+        <div data-role="page" data-theme='a'>
+        
+            <div data-role="panel" data-display="push" id="sidebar" data-theme="a">
+                <ul data-role="listview">
+                    <li data-icon='false' class="menu-item-has-children"><a href="#">Homepage Styles</a>
+                        <ul data-role="listview" class="sub-menu">
+                        	<li data-icon='false'><a data-ajax="false" href="index.html">Home</a></li>
+                        	<li data-icon='false'><a data-ajax="false" href="index-alternative.html">Home Alt</a></li>
+                        	<li data-icon='false'><a data-ajax="false" href="index-alt-right.html">Right Sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li data-icon='false' class="menu-item-has-children"><a href="#">Precoded Pages</a>
+                        <ul data-role="listview" class="sub-menu">
+                        	<li data-icon='false'><a data-ajax="false" href="about.html">About us</a></li>
+                        	<li data-icon='false'><a data-ajax="false" href="blog.html">Blog</a></li>
+                        	<li data-icon='false'><a data-ajax="false" href="contact.php">Contact form</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li data-icon='false' class="menu-item-has-children"><a href="#">HTML Examples</a>
+                        <ul data-role="listview" class="sub-menu">
+                        	<li data-icon='false'><a href="text.html" data-ajax="false">Text</a></li>
+                        	<li data-icon='false'><a href="forms.html" data-ajax="false">Forms</a></li>
+                        	<li data-icon='false'><a href="panels.html" data-ajax="false">Sidebars</a></li>
+                        	<li data-icon='false'><a href="tables.html" data-ajax="false">Tables</a></li>
+                        	<li data-icon='false'><a href="boxes.html" data-ajax="false">Boxes</a></li>
+                        	<li data-icon='false'><a href="back.html" data-ajax="false">Back button</a></li>
+                        	<li data-icon='false'><a href="listview.html" data-ajax="false">Listview</a></li>
+                        	<li data-icon='false'><a href="dialogs.html" data-ajax="false">Dialogs</a></li>
+                        	<li data-icon='false'><a href="footer.html" data-ajax="false">Footer</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li data-icon='false' class="menu-item-has-children"><a href="#">jQuery Extensions</a>
+                        <ul data-role="listview" class="sub-menu">
+                        	<li data-icon='false'><a href="location.html" data-ajax="false">GPS Tracking</a></li>
+                        	<li data-icon='false'><a href="slider.html" data-ajax="false">Owl Slider</a></li>
+                        	<li data-icon='false'><a href="iscroll.html" data-ajax="false">iScroll 5</a></li>
+                        	<li data-icon='false'><a href="devices.html" data-ajax="false">Device Detection</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li data-icon='false' class="menu-item-has-children"><a href="#">Developers Extra</a>
+                        <ul data-role="listview" class="sub-menu">
+                        	<li data-icon='false'><a data-ajax="false" href="getting-started.html">Getting started</a></li>
+                        	<li data-icon='false'><a data-ajax="false" href="version.html">Changelog</a></li>
+                        	<li data-icon='false'><a data-ajax="false" href="_.html">Plain Page</a></li>
+                        </ul>
+                    </li>
+                    
+                    
+                    <li data-icon='false' class="menu-item-has-children"><a href="#">Best in v2.0<span class="menu-mark">3</span></a>
+                        <ul data-role="listview" class="sub-menu">
+                        	<li data-icon='false'><a data-ajax="false" href="version.html">GPS Tracking</a></li>
+                          <li data-icon='false'><a data-ajax="false" href="version.html">Home Alt</a></li>
+                          <li data-icon='false'><a data-ajax="false" href="version.html">Right Sidebar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <form id="searchform" data-theme="a">
+                <input data-role="none" class="nightly-input" type="text" name="s" placeholder="Enter your text" />
+                <input data-role="none" class="nightly-button" type="submit" name="submit" value="" />
+            </form>
+    
+            <div data-role="header" data-tap-toggle="false" data-theme='a'>
+                <a href='#sidebar'data-role="none"><img src="images/menu-icon.png" alt="sidebar" id="header-menu-icon" /></a>
+                <h1 class="header-title">Nightly</h1>
+                <a href='#' data-role="none" id="a-search"><img src="images/search-icon.png" alt="search" id="header-search-icon" /></a>
+            </div>
+            
+            <div data-role="content">
+                
+                <h2>User Tracking</h2>
+                <p>Nightly in version 2.0 comes with great feature that will make your web applications stand out! The feature is <strong>
+                location tracking</strong> via browser for computers or <strong>GPS location tracking</strong> for mobiles.</p>
+                <h3>How does it work?</h3>
+                <p>Browser's location (it will probably ask you to accept or deny the request) provides information about the <strong>latitude</strong> and <strong>longitude</strong>. Then the AJAX call to Google API retrieves the address for our geolocation.</p>
+                <h3>What can it do?</h3>
+                <p>Retrieves user's exact location (latitude/longtitude) or pharse user's address, city, state, district and more.</p>
+                
+                <h2>Show me the MAGIC!</h2>
+   
+                <table class="ui-responsive">
+                    <tr>
+                        <td width="200">Address</td><td id="address"></td>
+                    </tr>
+                    <tr>
+                        <td>City</td><td id="city"></td>
+                    </tr>
+                    <tr>
+                        <td>State</td><td id="state"></td>
+                    </tr>
+                    <tr>
+                        <td>GPS Latitude</td><td id="lat"></td>
+                    </tr>
+                    <tr>
+                        <td>GPS Longtitude</td><td id="lng"></td>
+                    </tr>
+                    <tr>
+                        <td></td><td><p><button id="show-address" data-role="none" class="nightly-button" data-theme="b">Read address</button></p></td>
+                    </tr>
+                </table>
+                
+                <p><em>Address reading is for demonstration purposes only. Your address will not be stored in any way.</em></p>
+                
+                <h3>Show me the CODE!</h3>
+                <p>Usage is very simple and easy to understand. Use geolocation code provided with nightly (located in location.html) alongside with this simple jQuery code:</p>
+                
+                <pre>var geocoder;
+
+function readLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+    } 
+}
+
+function successFunction(position) {
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+    codeLatLng(lat, lng)
+}
+            
+function errorFunction(){ alert("Geocoder failed"); }
+            
+function codeLatLng(lat, lng) {  
+    var latlng = new google.maps.LatLng(lat, lng);
+    geocoder.geocode({'latLng': latlng}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            if (results[1]) {
+                interpretation(results, lat, lng);
+            } else {
+                alert("No results found");
+            }
+        } else {
+            alert("Geocoder failed due to: " + status);
+        }
+    });           
+}    
+
+function interpretation(results, lat, lng) {
+    $("#address").append(results[0].address_components[2].short_name + " "
+    + results[0].address_components[1].short_name + "/"
+    + results[0].address_components[0].short_name);
+    $("#city").append(results[0].address_components[3].short_name);
+    $("#state").append(results[0].address_components[7].short_name);
+    $("#lat").append(lat);
+    $("#lng").append(lng);
+}
+                
+$("#show-address").click(function(event){
+    readLocation();
+    geocoder = new google.maps.Geocoder();
+});</pre>
+                <p>That's it! What this code does?<br />1. Click the button.<br />2. Read user's geolocation via browser.<br />3. Interpret the results.</p>
+                
+                <h4>List of used variables</h4>
+                <pre>
+results[0].address_components[0].short_name - Address (house) number
+results[0].address_components[1].short_name - Address (house) number
+results[0].address_components[2].short_name - Address (street)
+results[0].address_components[3].short_name - City
+results[0].address_components[4].short_name - City (other)
+results[0].address_components[5].short_name - Locality (big town)
+results[0].address_components[6].short_name - Locality (district)
+results[0].address_components[7].short_name - State
+results[0].address_components[8].short_name - Postal code
+lat - Latitude
+lng - Longtitude</pre>
+                <p>There are even more variables available. Read Google Geolocation API for futher informations.</p>
+                
+                <h3>Note at the end</h3>
+                <p>This function is purely experimental and cannot give you the exact location. However the geolocation can be very precise. From my experience the results may vary depending on the browser. Google Chrome for example is very lame at this. In Safari is the result extraordinary accurate.</p>
+                
+            </div>
+            
+            <div data-role="footer" data-theme="none" data-border="false">
+                <p data-inset="true">NIGHTLY 2015. All rights reserved.</p>
+            </div>
+            
+        </div>
+        
+        <script type="text/javascript">
+
+            var geocoder;
+            
+            // Read location from browser
+            function readLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+                } 
+            }
+            
+            // Get the latitude and the longtitude
+            function successFunction(position) {
+                var lat = position.coords.latitude;
+                var lng = position.coords.longitude;
+                codeLatLng(lat, lng)
+            }
+            
+            function errorFunction(){ alert("Geocoder failed"); }
+            
+            function codeLatLng(lat, lng) {
+            
+                var latlng = new google.maps.LatLng(lat, lng);
+                geocoder.geocode({'latLng': latlng}, function(results, status) {
+                  if (status == google.maps.GeocoderStatus.OK) {
+
+                    if (results[1]) {
+                      interpretation(results, lat, lng);
+                    } else {
+                      alert("No results found");
+                    }
+                  } else {
+                    alert("Geocoder failed due to: " + status);
+                  }
+                });
+                
+              }    
+              
+              // What this function does is basicaly just input pharsed data in HTML table. This function can be changed.
+              function interpretation(results, lat, lng) {
+                  $("#address").append("<strong>"+results[0].address_components[2].short_name + " " + results[0].address_components[1].short_name + "/" + results[0].address_components[0].short_name+"</strong>");
+                  $("#city").append("<strong>"+results[0].address_components[3].short_name+"</strong>");
+                  $("#state").append("<strong>"+results[0].address_components[7].short_name+"</strong>");
+                  $("#lat").append("<strong>"+lat+"</strong>");
+                  $("#lng").append("<strong>"+lng+"</strong>");
+                  
+                  // If you want to do something with your data do it inside this function.
+              }
+              
+              $("#show-address").click(function(event){
+
+                  readLocation(); // read location only after clicking the button, not immediately after loading page (might be annoying)
+                  geocoder = new google.maps.Geocoder();
+
+              });
+              
+              
+               
+        </script>
+
+    </body>
+</html>

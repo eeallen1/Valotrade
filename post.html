@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <title>Valotrade - Make a Listing</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <!-- jQueryMobileCSS - styling-->
+        <link rel="stylesheet" href="css/jqeury.mobile.theme.min.css" />
+        
+        <!-- jQueryMobile icons -->
+        <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+
+        <!-- jQueryMobile core CSS -->
+    <link rel="stylesheet" href="css/jquery.mobile.min.css" />
+        
+        <!-- NIGHTLY style -->
+        <link rel="stylesheet" href="css/nightly.css" />
+        
+        <!-- Load Google Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+        
+        <!-- Load Font Awesome Icons -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+        <!-- jQuery -->
+        <script src="js/jquery.min.js"></script>
+        
+        <!-- jQueryMobile -->
+        <script src="js/jquery.mobile.min.js"></script>
+        
+        <!-- NIGHTLY JS -->
+        <script src="js/nightly.js"></script>
+
+        <!-- submit form script -->
+        <script src="js/post.js"></script>
+        
+        <!-- masked input jquery plugin --> 
+        <script src="js/jquery.maskedinput.min.js"></script>
+        
+        <!-- phonegap JS --> 
+        
+
+    </head>
+    <body>
+    
+         <div data-role="page" data-theme='a'>
+        
+            <div data-role="panel" data-display="push" id="sidebar" data-theme="d">
+               <ul data-role="listview">
+                    <li data-icon='home' class="ui-icon-alt"><a href="index.html">Home</a>
+                    </li>
+                    <hr>
+                    <li data-icon='star'><a href="post.html">Make a Listing</a>
+                    </li>
+                    <hr>
+                    <li data-icon='search'> <a href="search_results_example.html">View Listings</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <form id="searchform" data-theme="a">
+                <input data-role="none" class="nightly-input" type="text" name="s" placeholder="Search for a book" />
+                <input data-role="none" class="nightly-button" type="submit" name="submit" value="" />
+            </form>
+    
+            <div data-role="header" data-tap-toggle="false" data-theme='a'>
+                <a href='#sidebar'data-role="none"><img src="images/menu-icon.png" alt="sidebar" id="header-menu-icon" /></a>
+                <h1 class="header-title">Valotrade</h1>
+                <a href='#' data-role="none" id="a-search"><img src="images/search-icon.png" alt="search" id="header-search-icon" /></a>
+            </div>
+            
+            
+            
+            
+            <div data-role="content">
+              <form method="POST" id="listing_form">
+                <ul data-role="listview">
+              
+                    <li data-role="list-divider">Enter your book's information</li>
+                    <li data-role="fieldcontain">
+                        <label>Title</label>
+                        <input id="title"data-corners="false" type="text" value="" data-clear-btn="true" placeholder="Textbook Title..." required>
+                    </li>
+
+                    <li data-role="fieldcontain">
+                        <label>Edition</label>
+                        <input id="edition" data-corners="false" type="number" value="" data-clear-btn="true" placeholder="Edition number..." required>
+                    </li>
+
+                    <li data-role="fieldcontain">
+                        <label>Author</label>
+                        <input id="author" data-corners="false" type="text" value="" data-clear-btn="true" placeholder="Author name(s)..." required>
+                    </li>
+
+                    <div id="condradio">
+                     <li data-role="fieldcontain">
+                        <fieldset data-role="controlgroup" data-corners="false" data-mini="true">
+                            <legend>Condition</legend>
+                            <input id="condition1"type="radio" name="condition" value="New">
+                            <label for="condition1">New</label>
+                            <input id="condition2"type="radio" name="condition" value="Like New">
+                            <label for="condition2">Like New</label>
+                            <input id="condition3" type="radio"name="condition" value="Good">
+                            <label for="condition3">Good</label>
+                            <input id="condition4" type="radio" name="condition" value="Fair">
+                            <label for="condition4">Fair</label>
+                            <input id="condition5" type="radio"name="condition" value="Poor">
+                            <label for="condition5">Poor</label>
+                        </fieldset>
+                    </li>
+                    </div>
+
+                    <li data-role="fieldcontain">
+                        <label>Contact</label>
+                        <input id="contact"data-corners="false" type="text" value="" data-clear-btn="true" placeholder="Phone number or email address.." required>
+                    </li>
+                    
+                    <li data-role="fieldcontain">
+                        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                            <legend>Sell or Trade</legend>
+                            <input type="checkbox" id="sell" checked="">
+                            <label for="sell">For Sale</label>
+                            <input type="checkbox" id="trade">
+                            <label for="trade">For Trade</label>
+                        </fieldset>
+                    </li>
+                    
+                     <li data-role="fieldcontain">
+                        <label>Set Price</label>
+                        <input id="price" data-corners="false" type="text" value="" data-clear-btn="true" placeholder="Enter desired price, trade, or both.." required>
+                    </li>
+                    
+                    <li data-role="fieldcontain">
+                        <label>Extra info:</label>
+                    <textarea id="info" data-corners="false" cols="40" rows="5" placeholder="Contact name, name of course that requires this book, etc..."></textarea>
+                    </li>
+                    
+                    <li data-role="fieldcontain">
+                    <label>Image</label>
+                    <button id="image;">Choose Image</button>
+                      <!--   <label>Image:</label>
+                    <input id="image" data-corners="false" type="file" name="image" accept="image/*"></input> -->
+                    </li>
+                    
+                </ul>
+               
+               
+
+                </form>
+                <br>
+                <button style="background-color:#4C4174; color:#FFF" type="submit" id="submit_post" form="listing_form" value="Submit">Submit</button>
+
+                </div>
+            </div>
+            
+            <!-- script for input fields validation --> 
+            <script type="text/javascript">
+              jQuery(function($){
+        
+            $('#edition').bind('input propertychange', function () {
+            $(this).val($(this).val().replace(/[^0-9]/g, ''));
+            });
+        }); 
+            </script> 
+
+    </body>
+</html>

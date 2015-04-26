@@ -1,0 +1,321 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <title>Nightly - Tables and Pricing</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<!-- jQueryMobileCSS - styling-->
+		<link rel="stylesheet" href="css/jqeury.mobile.theme.min.css" />
+		
+		<!-- jQueryMobile icons -->
+		<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+
+		<!-- jQueryMobile core CSS -->
+    <link rel="stylesheet" href="css/jquery.mobile.min.css" />
+		
+		<!-- NIGHTLY style -->
+		<link rel="stylesheet" href="css/nightly.css" />
+		
+		<!-- Load Google Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<!-- Load Font Awesome Icons -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- jQuery -->
+		<script src="js/jquery.min.js"></script>
+		
+		<!-- jQueryMobile -->
+		<script src="js/jquery.mobile.min.js"></script>
+		
+		<!-- NIGHTLY JS -->
+		<script src="js/nightly.js"></script>
+
+    </head>
+    <body>
+    
+        <div data-role="page" data-theme='a'>
+        
+            <div data-role="panel" data-display="push" id="sidebar" data-theme="a">
+                <ul data-role="listview">
+                    <li data-icon='false' class="menu-item-has-children"><a href="#">Homepage Styles</a>
+                        <ul data-role="listview" class="sub-menu">
+                        	<li data-icon='false'><a data-ajax="false" href="index.html">Home</a></li>
+                        	<li data-icon='false'><a data-ajax="false" href="index-alternative.html">Home Alt</a></li>
+                        	<li data-icon='false'><a data-ajax="false" href="index-alt-right.html">Right Sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li data-icon='false' class="menu-item-has-children"><a href="#">Precoded Pages</a>
+                        <ul data-role="listview" class="sub-menu">
+                        	<li data-icon='false'><a data-ajax="false" href="about.html">About us</a></li>
+                        	<li data-icon='false'><a data-ajax="false" href="blog.html">Blog</a></li>
+                        	<li data-icon='false'><a data-ajax="false" href="contact.php">Contact form</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li data-icon='false' class="menu-item-has-children"><a href="#">HTML Examples</a>
+                        <ul data-role="listview" class="sub-menu">
+                        	<li data-icon='false'><a href="text.html" data-ajax="false">Text</a></li>
+                        	<li data-icon='false'><a href="forms.html" data-ajax="false">Forms</a></li>
+                        	<li data-icon='false'><a href="panels.html" data-ajax="false">Sidebars</a></li>
+                        	<li data-icon='false'><a href="tables.html" data-ajax="false">Tables</a></li>
+                        	<li data-icon='false'><a href="boxes.html" data-ajax="false">Boxes</a></li>
+                        	<li data-icon='false'><a href="back.html" data-ajax="false">Back button</a></li>
+                        	<li data-icon='false'><a href="listview.html" data-ajax="false">Listview</a></li>
+                        	<li data-icon='false'><a href="dialogs.html" data-ajax="false">Dialogs</a></li>
+                        	<li data-icon='false'><a href="footer.html" data-ajax="false">Footer</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li data-icon='false' class="menu-item-has-children"><a href="#">jQuery Extensions</a>
+                        <ul data-role="listview" class="sub-menu">
+                        	<li data-icon='false'><a href="location.html" data-ajax="false">GPS Tracking</a></li>
+                        	<li data-icon='false'><a href="slider.html" data-ajax="false">Owl Slider</a></li>
+                        	<li data-icon='false'><a href="iscroll.html" data-ajax="false">iScroll 5</a></li>
+                        	<li data-icon='false'><a href="devices.html" data-ajax="false">Device Detection</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li data-icon='false' class="menu-item-has-children"><a href="#">Developers Extra</a>
+                        <ul data-role="listview" class="sub-menu">
+                        	<li data-icon='false'><a data-ajax="false" href="getting-started.html">Getting started</a></li>
+                        	<li data-icon='false'><a data-ajax="false" href="version.html">Changelog</a></li>
+                        	<li data-icon='false'><a data-ajax="false" href="_.html">Plain Page</a></li>
+                        </ul>
+                    </li>
+                    
+                    
+                    <li data-icon='false' class="menu-item-has-children"><a href="#">Best in v2.0<span class="menu-mark">3</span></a>
+                        <ul data-role="listview" class="sub-menu">
+                        	<li data-icon='false'><a data-ajax="false" href="version.html">GPS Tracking</a></li>
+                          <li data-icon='false'><a data-ajax="false" href="version.html">Home Alt</a></li>
+                          <li data-icon='false'><a data-ajax="false" href="version.html">Right Sidebar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+            <form id="searchform" data-theme="a">
+                <input data-role="none" class="nightly-input" type="text" name="s" placeholder="Enter your text" />
+                <input data-role="none" class="nightly-button" type="submit" name="submit" value="" />
+            </form>
+    
+            <div data-role="header" data-tap-toggle="false" data-theme='a'>
+                <a href='#sidebar'data-role="none"><img src="images/menu-icon.png" alt="sidebar" id="header-menu-icon" /></a>
+                <h1 class="header-title">Nightly</h1>
+                <a href='#' data-role="none" id="a-search"><img src="images/search-icon.png" alt="search" id="header-search-icon" /></a>
+            </div>
+            
+            <div data-role="content">
+            
+                <h2>Table with filter</h2>
+                <table data-role="table" data-mode="columntoggle" class="ui-responsive">
+                 <thead>
+                   <tr>
+                     <th data-priority="2">Rank</th>
+                     <th class="align-left">Movie Title</th>
+                     <th data-priority="3">Year</th>
+                     <th data-priority="1">Rating</th>
+                     <th data-priority="5">Reviews</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                   <tr>
+                     <th>1</th>
+                     <td class="align-left"><a href="http://en.wikipedia.org/wiki/Citizen_Kane" data-rel="external">Citizen Kane</a></td>
+                     <td>1941</td>
+                     <td>100%</td>
+                     <td>74</td>
+                   </tr>
+                   <tr>
+                     <th>2</th>
+                     <td class="align-left"><a href="http://en.wikipedia.org/wiki/Casablanca_(film)" data-rel="external">Casablanca</a></td>
+                     <td>1942</td>
+                     <td>97%</td>
+                     <td>64</td>
+                   </tr>
+                   <tr>
+                     <th>3</th>
+                     <td class="align-left"><a href="http://en.wikipedia.org/wiki/The_Godfather" data-rel="external">The Godfather</a></td>
+                     <td>1972</td>
+                     <td>97%</td>
+                     <td>87</td>
+                   </tr>
+                   <tr>
+                     <th>4</th>
+                     <td class="align-left"><a href="http://en.wikipedia.org/wiki/Gone_with_the_Wind_(film)" data-rel="external">Gone with the Wind</a></td>
+                     <td>1939</td>
+                     <td>96%</td>
+                     <td>87</td>
+                   </tr>
+                   <tr>
+                     <th>5</th>
+                     <td class="align-left"><a href="http://en.wikipedia.org/wiki/Lawrence_of_Arabia_(film)" data-rel="external">Lawrence of Arabia</a></td>
+                     <td>1962</td>
+                     <td>94%</td>
+                     <td>87</td>
+                   </tr>
+                   <tr>
+                     <th>6</th>
+                     <td class="align-left"><a href="http://en.wikipedia.org/wiki/Dr._Strangelove" data-rel="external">Dr. Strangelove Or How I Learned to Stop Worrying and Love the Bomb</a></td>
+                     <td>1964</td>
+                     <td>92%</td>
+                     <td>74</td>
+                   </tr>
+                   <tr>
+                     <th>7</th>
+                     <td class="align-left"><a href="http://en.wikipedia.org/wiki/The_Graduate" data-rel="external">The Graduate</a></td>
+                     <td>1967</td>
+                     <td>91%</td>
+                     <td>122</td>
+                   </tr>
+                   <tr>
+                     <th>8</th>
+                     <td class="align-left"><a href="http://en.wikipedia.org/wiki/The_Wizard_of_Oz_(1939_film)" data-rel="external">The Wizard of Oz</a></td>
+                     <td>1939</td>
+                     <td>90%</td>
+                     <td>72</td>
+                   </tr>
+                   <tr>
+                     <th>9</th>
+                     <td class="align-left"><a href="http://en.wikipedia.org/wiki/Singin%27_in_the_Rain" data-rel="external">Singin' in the Rain</a></td>
+                     <td>1952</td>
+                     <td>89%</td>
+                     <td>85</td>
+                   </tr>
+                   <tr>
+                     <th>10</th>
+                     <td class="align-left"><a href="http://en.wikipedia.org/wiki/Inception" data-rel="external">Inception</a></td>
+                     <td>2010</td>
+                     <td>84%</td>
+                     <td>78</td>
+                   </tr>
+                 </tbody>
+               </table>
+               <p><a href="#popup1" data-rel="popup" data-transition="pop">Show source</a></p>
+               <div data-role="popup" id="popup1" data-shadow="false">
+<pre>&lt;table data-role="table" data-mode="columntoggle" class="ui-responsive">
+ &lt;thead>
+   &lt;tr>
+     &lt;th data-priority="2">...&lt;/th>
+     &lt;th class="align-left">...&lt;/th>
+     &lt;th data-priority="3">...&lt;/th>
+     &lt;th data-priority="1">...&lt;/th>
+     &lt;th data-priority="5">...&lt;/th>
+   &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+   &lt;tr>
+     &lt;th>...&lt;/th>
+     &lt;td class="align-left">...&lt;/td>
+     &lt;td>...&lt;/td>
+     &lt;td>...&lt;/td>
+     &lt;td>...&lt;/td>
+   &lt;/tr>
+ &lt;/tbody>
+&lt;/table></pre>
+                </div>
+            
+                <h2>Pricing tables</h2>
+                <table data-role="pricing-table">
+                  <thead>
+                    <tr>
+                      <th>Lite Package</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="pricing-table-price">
+                      <th>$<strong>4<sup>99</sup></strong><span class="pricing-table-pt">per month</span></th>
+                    </tr>
+                    <tr>
+                      <th>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vestibulum, risus vitae aliquam fringilla, quam metus adipiscing orci, pellentesque.</th>
+                    </tr>
+                    <tr>
+                      <th><strong>1 Shared IP Adress</strong></th>
+                    </tr>
+                    <tr>
+                      <th><strong>512MB RAM</strong></th>
+                    </tr>
+                    <tr>
+                      <th><strong>1.2GHz Non-shared CPU</strong></th>
+                    </tr>
+                    <tr>
+                      <th><strong>20GB Hard Drive</strong></th>
+                    </tr>
+                    <tr>
+                      <th><strong>24/7 Online Support</strong></th>
+                    </tr>
+                    <tr>
+                      <th><a href="#"><button data-role="none" class="nightly-button nightly-button-a"><i class="fa fa-shopping-cart"></i>Order now</button></a></th>
+                    </tr>
+                 </tbody>
+                </table>
+                
+                <table data-role="pricing-table">
+                  <thead>
+                    <tr>
+                      <th>Elite Package</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="pricing-table-price pricing-table-price-b">
+                      <th>$<strong>9<sup>99</sup></strong><span class="pricing-table-pt">per month</span></th>
+                    </tr>
+                    <tr>
+                      <th>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vestibulum, risus vitae aliquam fringilla, quam metus adipiscing orci, pellentesque.</th>
+                    </tr>
+                    <tr>
+                      <th><strong>1 Shared IP Adress</strong></th>
+                    </tr>
+                    <tr>
+                      <th><strong>512MB RAM</strong></th>
+                    </tr>
+                    <tr>
+                      <th><strong>1.2GHz Non-shared CPU</strong></th>
+                    </tr>
+                    <tr>
+                      <th><strong>20GB Hard Drive</strong></th>
+                    </tr>
+                    <tr>
+                      <th><strong>24/7 Online Support</strong></th>
+                    </tr>
+                    <tr>
+                      <th><a href="#"><button data-role="none" class="nightly-button nightly-button-b"><i class="fa fa-shopping-cart"></i>Order now</button></a></th>
+                    </tr>
+                 </tbody>
+                </table>
+                <p><a href="#popup2" data-rel="popup" data-transition="pop">Show source</a></p>
+                <div data-role="popup" id="popup2" data-shadow="false">
+<pre>&lt;table data-role="pricing-table">
+  &lt;thead>
+    &lt;tr>
+      &lt;th>Elite Package</th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr class="pricing-table-price pricing-table-price-b">
+      &lt;th>$&lt;strong>9&lt;sup>99&lt;/sup>&lt;/strong>&lt;span class="pricing-table-pt">per month&lt;/span>&lt;/th>
+    &lt;/tr>
+    &lt;tr>
+      &lt;th>Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/th>
+    &lt;/tr>
+    &lt;tr>
+      &lt;th>&lt;strong>1 Shared IP Adress&lt;/strong>&lt;/th>
+    &lt;/tr>
+    &lt;tr>
+      &lt;th>&lt;a href="#">&lt;button data-role="none">&lt;i class="fa fa-shopping-cart">&lt;/i>Order now&lt;/button>&lt;/a>&lt;/th>
+    &lt;/tr>
+  &lt;/tbody>
+&lt;/table></pre>
+                </div>
+            
+            </div>
+            
+            <div data-role="footer" data-theme="none" data-border="false">
+                <p data-inset="true">NIGHTLY 2015. All rights reserved.</p>
+            </div>
+            
+        </div>
+
+    </body>
+</html>

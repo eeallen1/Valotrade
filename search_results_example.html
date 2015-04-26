@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <title>Valotrade - Make a Listing</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<!-- jQueryMobileCSS - styling-->
+		<link rel="stylesheet" href="css/jqeury.mobile.theme.min.css" />
+		
+		<!-- jQueryMobile icons -->
+		<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+
+		<!-- jQueryMobile core CSS -->
+    <link rel="stylesheet" href="css/jquery.mobile.min.css" />
+		
+		<!-- NIGHTLY style -->
+		<link rel="stylesheet" href="css/nightly.css" />
+		
+		<!-- Load Google Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<!-- Load Font Awesome Icons -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+
+		<!-- jQuery -->
+		<script src="js/jquery.min.js"></script>
+		
+		<!-- jQueryMobile -->
+		<script src="js/jquery.mobile.min.js"></script>
+		
+		<!-- NIGHTLY JS -->
+		<script src="js/nightly.js"></script>
+
+    </head>
+    <body>
+    
+         <div data-role="page" data-theme='a'>
+        
+            <div data-role="panel" data-display="push" id="sidebar" data-theme="d">
+                <ul data-role="listview">
+                    <li data-icon='home' class="ui-icon-alt"><a href="#">Profile</a>
+                    </li>
+					<hr>
+                    <li data-icon='star'><a href="#">Make a Listing</a>
+                    </li>
+					<hr>
+                    <li data-icon='search'> <a href="#">View Listings</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <form id="searchform" data-theme="a">
+                <input data-role="none" class="nightly-input" type="text" name="s" placeholder="Search for a book" />
+                <input data-role="none" class="nightly-button" type="submit" name="submit" value="" />
+            </form>
+    
+            <div data-role="header" data-tap-toggle="false" data-theme='a'>
+                <a href='#sidebar'data-role="none"><img src="images/menu-icon.png" alt="sidebar" id="header-menu-icon" /></a>
+                <h1 class="header-title">Valotrade</h1>
+                <a href='#' data-role="none" id="a-search"><img src="images/search-icon.png" alt="search" id="header-search-icon" /></a>
+            </div>
+            
+            <div data-role="content">
+                            
+                <h2>Search Results</h2>
+                <p>
+                <ul data-role="listview" data-icon="false" data-divider-theme="">
+                    <li data-role="list-divider">Matches</li>
+					<li data-theme="b"><a href="#">
+                        <img src="http://107.170.157.210/PicUploads/operating3.jpg">
+                        <h2>Modern Operating Systems 4th Ed.</h2>
+                        <p>Buy New: $153.09</p>
+						<p>Rent: $59.49</p>
+                        <p class="ui-li-aside"><a class="ui-tag" data-theme="a" href="#">Featured by Amazon.com</a></p>
+                    </a></li>
+                    <li data-theme="b"><a href="#">
+                        <img src="http://107.170.157.210/PicUploads/operating1.jpg">
+                        <h2>Modern Operating Systems 4th Ed.</h2>
+                        <p>Price: $120 or trade</p>                       
+					</a></li>
+                    <li data-theme="b"><a href="#">
+                        <img src="http://107.170.157.210/PicUploads/operating2.jpg">
+                        <h2>Modern Operating Systems 4th Ed.</h2>
+                        <p>Price: $105 - no trades</p>
+                    </a></li>
+                    <li data-role="list-divider">Similar Books</li>
+                    <li data-theme="b"><a href="#">
+                        <img src="http://107.170.157.210/PicUploads/operating4.jpg">
+                        <h2>Modern Operating Systems 3rd Ed.</h2>
+                        <p>Price: $35 - no trades</p>
+                    </a></li>
+					<li data-theme="b"><a href="#">
+                        <img src="http://107.170.157.210/PicUploads/linuxbook.jpg">
+                        <h2>Linux Kernel Development 3rd Ed.</h2>
+                        <p>Price: $25 - no trades</p>
+                    </a></li>
+					<li data-theme="b"><a href="#">
+                        <img src="http://107.170.157.210/PicUploads/linuxbook2.jpg">
+                        <h2>THe Linux Command Line: A Complete Introduction</h2>
+                        <p>Price: $15 or trade</p>
+                    </a></li>
+					</ul>
+                </p>
+            </div>   
+                     
+        </div>
+
+    </body>
+</html>
