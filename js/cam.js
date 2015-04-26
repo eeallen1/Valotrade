@@ -53,5 +53,5 @@ function capturePhoto(source) {
 }
  
 function onFail(message) {
-    alert('Failed because: ' + message);
+    alert('Image not uploaded because: ' + message);
 }
