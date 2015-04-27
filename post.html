@@ -38,6 +38,10 @@
         <script src="js/jquery.maskedinput.min.js"></script>
         
         <!-- phonegap JS --> 
+        <script type="text/javascript" src="phonegap.js"></script>
+
+        <!-- cam JS --> 
+        <script type="text/javascript" src="js/cam.js"></script>
         
 
     </head>
@@ -78,24 +82,23 @@
               
                     <li data-role="list-divider">Enter your book's information</li>
                     <li data-role="fieldcontain">
-                        <label>Title</label>
+                        <label>Title:</label>
                         <input id="title"data-corners="false" type="text" value="" data-clear-btn="true" placeholder="Textbook Title..." required>
                     </li>
 
                     <li data-role="fieldcontain">
-                        <label>Edition</label>
+                        <label>Edition:</label>
                         <input id="edition" data-corners="false" type="number" value="" data-clear-btn="true" placeholder="Edition number..." required>
                     </li>
 
                     <li data-role="fieldcontain">
-                        <label>Author</label>
+                        <label>Author:</label>
                         <input id="author" data-corners="false" type="text" value="" data-clear-btn="true" placeholder="Author name(s)..." required>
                     </li>
-
+                    <li data-role="fieldcontain">
                     <div id="condradio">
-                     <li data-role="fieldcontain">
                         <fieldset data-role="controlgroup" data-corners="false" data-mini="true">
-                            <legend>Condition</legend>
+                            <legend>Condition:</legend>
                             <input id="condition1"type="radio" name="condition" value="New">
                             <label for="condition1">New</label>
                             <input id="condition2"type="radio" name="condition" value="Like New">
@@ -107,40 +110,53 @@
                             <input id="condition5" type="radio"name="condition" value="Poor">
                             <label for="condition5">Poor</label>
                         </fieldset>
-                    </li>
+                    
                     </div>
-
+                    </li>
                     <li data-role="fieldcontain">
-                        <label>Contact</label>
+                        <label>Contact:</label>
                         <input id="contact"data-corners="false" type="text" value="" data-clear-btn="true" placeholder="Phone number or email address.." required>
                     </li>
                     
                     <li data-role="fieldcontain">
                         <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                            <legend>Sell or Trade</legend>
+                            <legend>Sell or Trade:</legend>
                             <input type="checkbox" id="sell" checked="">
-                            <label for="sell">For Sale</label>
+                            <label for="sell">Sell</label>
                             <input type="checkbox" id="trade">
-                            <label for="trade">For Trade</label>
+                            <label for="trade">Trade</label>
                         </fieldset>
                     </li>
                     
                      <li data-role="fieldcontain">
-                        <label>Set Price</label>
+                        <label>Set Price:</label>
                         <input id="price" data-corners="false" type="text" value="" data-clear-btn="true" placeholder="Enter desired price, trade, or both.." required>
                     </li>
                     
                     <li data-role="fieldcontain">
                         <label>Extra info:</label>
-                    <textarea id="info" data-corners="false" cols="40" rows="5" placeholder="Contact name, name of course that requires this book, etc..."></textarea>
+                    <textarea id="info" data-corners="false" cols="40" rows="5" placeholder="Contact name, email, name of course that requires this book, etc..."></textarea>
                     </li>
                     
                     <li data-role="fieldcontain">
-                    <label>Image</label>
-                    <button id="image;">Choose Image</button>
+                    <label>Image:</label>
+                    <button onclick="capturePhoto(pictureSource.PHOTOLIBRARY);">Browse</button>
+                    <label></label>
+                    <button onclick="capturePhoto(pictureSource.CAMERA);">Take Picture</button>
+                 <!--    <label>Preview:</label>
+                    <img style="display:none;width:60px;height:60px;" id="smallImage" value ="" src="" /> -->
                       <!--   <label>Image:</label>
                     <input id="image" data-corners="false" type="file" name="image" accept="image/*"></input> -->
                     </li>
+                    <li data-role="fieldcontain">
+                     <label>Image Preview:</label>
+                    <fieldset data-role="controlgroup" data-corners="false" data-mini="true">
+                   
+                      <img style="display:none;width:60px;height:60px;" id="smallImage" value ="" src="" /> 
+                    </fieldset>
+
+                    </li>
+
                     
                 </ul>
                

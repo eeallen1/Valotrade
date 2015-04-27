@@ -18,7 +18,7 @@ function onCapturePhoto(fileURI) {
         var smallImage = document.getElementById('smallImage'); 
         smallImage.style.display = 'block';
         smallImage.src = fileURI;
-        clearCache();
+        //clearCache();
         retries = 0;
         alert('Done!');
     }
