@@ -39,7 +39,8 @@ $(document).ready(function(){
 				data: dataString,
 				cache: false,
 				success: function(result){
-					alert(result);
+					window.location.replace("index.html");
+					notification.alert("Post Success!");
 				}
 			});
 		}
