@@ -5,8 +5,8 @@ $(document).ready(function(){
 
  //arbitrary identifier for this session. Used to generate image url 
  var timestamp = new Date().getTime() / 1000;
- $('img')[2].src = parseInt(timestamp);
- //console.log( $('img')[2].src);
+ $('img')[2].src = "/../../../PicUploads/"+parseInt(timestamp);
+ console.log("src: "+ $('img')[2].src);
 	var condition = "Unknown"; 
 	$('#condradio input').on('change', function() {
 				

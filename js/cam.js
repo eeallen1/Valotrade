@@ -26,7 +26,7 @@ function onCapturePhoto(fileURI) {
         clearCache();
        /* var smallImage = document.getElementById('smallImage'); */
         smallImage.style.display = 'block';
-        smallImage.src = "http://107.170.157.210/PicUploads/" + timestamp + "img.jpg";
+        smallImage.src =  timestamp +"img.jpg";
         retries = 0;
         navigator.notification.alert('Your image has been posted!' + timestamp, null, 'Upload Success', 'Okay');
     }
@@ -52,7 +52,7 @@ function onCapturePhoto(fileURI) {
     /*$.post('http://107.170.157.210/ServerPHP/upload.php', {timestamp: timestamp});*/
     options.chunkedMode = false;
     var ft = new FileTransfer();
-    ft.upload(fileURI, encodeURI("http://107.170.157.210/ServerPHP/upload.php?timestamp="+timestamp), win, fail, options);
+    ft.upload(fileURI, encodeURI("http://107.170.157.210/ServerPHP/upload.php?ts="+timestamp), win, fail, options);
 }
  
 function capturePhoto(source) {
