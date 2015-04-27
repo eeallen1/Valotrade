@@ -21,7 +21,7 @@ function onCapturePhoto(fileURI) {
         smallImage.value="http://107.170.157.210/PicUploads/valoimg.jpg"
         //clearCache();
         retries = 0;
-        notification.alert('Upload success!');
+        navigator.notification.alert('Your image has been posted!', null, 'Upload Success', 'Okay');
     }
  
     var fail = function (error) {
@@ -54,5 +54,5 @@ function capturePhoto(source) {
 }
  
 function onFail(message) {
-    notification.alert('Image not uploaded because: ' + message);
+    navigator.notification.alert('Image not uploaded because: ' + message, null, 'Upload Failed', 'Okay');
 }
