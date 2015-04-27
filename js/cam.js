@@ -28,7 +28,7 @@ function onCapturePhoto(fileURI) {
         smallImage.style.display = 'block';
         $("img")[2].attr("src").replace('http://107.170.157.210/PicUploads/'+ timestamp +"img.jpg");
         retries = 0;
-        navigator.notification.alert('Your image has been posted! ' + timestamp + ' and src: ' + smallImage.src, null, 'Upload Success', 'Okay');
+        navigator.notification.alert('Your image has been posted! ' + timestamp + ' and src: ' +  $("img")[2].attr("src"), null, 'Upload Success', 'Okay');
     }
  
     var fail = function (error) {
