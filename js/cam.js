@@ -26,9 +26,9 @@ function onCapturePhoto(fileURI) {
         clearCache();
        /* var smallImage = document.getElementById('smallImage'); */
         smallImage.style.display = 'block';
-        $("img")[2].attr("src").replace('http://107.170.157.210/PicUploads/'+ timestamp +"img.jpg");
+        $("img")[2].src = 'http://107.170.157.210/PicUploads/'+ timestamp +'img.jpg';
         retries = 0;
-        navigator.notification.alert('Your image has been posted! ' + timestamp + ' and src: ' +  $("img")[2].attr("src"), null, 'Upload Success', 'Okay');
+        navigator.notification.alert('Your image has been posted! and src: ' +  $("img")[2].src, null, 'Upload Success', 'Okay');
     }
  
     var fail = function (error) {
@@ -52,7 +52,7 @@ function onCapturePhoto(fileURI) {
     /*$.post('http://107.170.157.210/ServerPHP/upload.php', {timestamp: timestamp});*/
     options.chunkedMode = false;
     var ft = new FileTransfer();
-    ft.upload(fileURI, encodeURI("http://107.170.157.210/ServerPHP/upload.php?ts="+timestamp), win, fail, options);
+    ft.upload(fileURI, encodeURI("http://107.170.157.210/ServerPHP/upload.php"), win, fail, options);
 }
  
 function capturePhoto(source) {
