@@ -13,6 +13,12 @@ $(document).ready(function(){
 	           condition = $('input[name="condition"]:checked', '#condradio').val();
 	 
 	});
+	var trade = "Unknown";
+	$('#traderadio input').on('change', function() {
+				
+	           trade= $('input[name="trade"]:checked', '#traderadio').val();
+	 
+	});
 
 	$("#submit_post").click(function(){
 		var title = $("#title").val();
@@ -20,8 +26,6 @@ $(document).ready(function(){
 		var author =$("#author").val();
 		//var condition = $('input[name=#condition]:checked').val();
 		var contact = $("#contact").val();
-		var sell = $("#sell").is(':checked');
-		var trade = $("#trade").is(':checked'); 
 		var price = $("#price").val();
 		var info = $("#info").val();
 		var image = $('img')[2].src 
@@ -30,8 +34,8 @@ $(document).ready(function(){
 		console.log(image); 
 		// Returns successful data submission message when the entered information is stored in database.
 		var dataString = 'title=' + title + '&edition=' + edition + '&author=' + author + '&condition=' + condition
-		+'&contact=' + contact + '&sell=' + sell + '&trade=' + trade + '&price=' + price + '&info=' + info + '&image=' + image + '&timestamp=' + timestamp;
-		if (title == '' || edition == '' || author == '' || condition == '' || contact == '') 
+		+'&contact=' + contact + '&trade=' + trade + '&price=' + price + '&info=' + info + '&image=' + image + '&timestamp=' + timestamp;
+		if (title == '' || edition == '' || author == '' || condition == "Unknown" || contact == '' || trade == "Unknown") 
 		{
 			//navigator.notification.alert('Please fill required fields', null, 'Incomplete Form', 'Okay'");
 		} 
