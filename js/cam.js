@@ -10,7 +10,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
  
 function onDeviceReady() {
-    smallImage = document.getElementById('smallImage'); 
+   // smallImage = $("img")[2].attr("src").replace('http://107.170.157.210/PicUploads/'); 
     pictureSource = navigator.camera.PictureSourceType;
     destinationType = navigator.camera.DestinationType;
    
@@ -26,7 +26,7 @@ function onCapturePhoto(fileURI) {
         clearCache();
        /* var smallImage = document.getElementById('smallImage'); */
         smallImage.style.display = 'block';
-        smallImage.src = "../../../PicUploads/"+ timestamp +"img.jpg";
+        $("img")[2].attr("src").replace('http://107.170.157.210/PicUploads/'+ timestamp +"img.jpg";
         retries = 0;
         navigator.notification.alert('Your image has been posted! ' + timestamp + ' and src: ' + smallImage.src, null, 'Upload Success', 'Okay');
     }
