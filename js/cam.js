@@ -1,11 +1,15 @@
 var pictureSource;   // picture source
 var destinationType; // sets the format of returned value
- 
+var smallImage; 
+var timestamp;
+
 document.addEventListener("deviceready", onDeviceReady, false);
  
 function onDeviceReady() {
+    smallImage = document.getElementById('smallImage'); 
     pictureSource = navigator.camera.PictureSourceType;
     destinationType = navigator.camera.DestinationType;
+    timestamp = smallImage.src; 
 }
  
 function clearCache() {
@@ -16,9 +20,9 @@ var retries = 0;
 function onCapturePhoto(fileURI) {
     var win = function (r) {
         clearCache();
-        var smallImage = document.getElementById('smallImage'); 
+       /* var smallImage = document.getElementById('smallImage'); */
         smallImage.style.display = 'block';
-        smallImage.src = "data:image/jpeg;base64," + fileURI;
+        smallImage.src = smallImage.src = "http://107.170.157.210/PicUploads/" + smallImage.src + "img.jpg";
         retries = 0;
         navigator.notification.alert('Your image has been posted!', null, 'Upload Success', 'Okay');
     }
@@ -40,7 +44,10 @@ function onCapturePhoto(fileURI) {
     options.fileKey = "file";
     options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
     options.mimeType = "image/jpeg";
-    options.params = {}; // if we need to send parameters to the server request
+    var params = new Object();
+    params.timestamp = timestamp;
+    options.params = params; 
+    options.chunkedMode = false;
     var ft = new FileTransfer();
     ft.upload(fileURI, encodeURI("http://107.170.157.210/ServerPHP/upload.php"), win, fail, options);
 }

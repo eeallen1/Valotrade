@@ -1,8 +1,12 @@
 // Wait for PhoneGap to load
 
 $(document).ready(function(){
- 
 
+
+ //arbitrary identifier for this session. Used to generate image url 
+ var timestamp = new Date().getTime() / 1000;
+ $('img')[2].src = parseInt(timestamp);
+ //console.log( $('img')[2].src);
 	var condition = "Unknown"; 
 	$('#condradio input').on('change', function() {
 				
@@ -21,7 +25,7 @@ $(document).ready(function(){
 		var price = $("#price").val();
 		var info = $("#info").val();
 		var image = $('img')[2].src 
-		var timestamp = new Date().getTime() / 1000;
+		
 
 		console.log(image); 
 		// Returns successful data submission message when the entered information is stored in database.
