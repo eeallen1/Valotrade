@@ -49,14 +49,10 @@ function onCapturePhoto(fileURI) {
     options.fileKey = "file";
     options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
     options.mimeType = "image/jpeg";
-    var params = new Object();
-    params[0] = "timestamp";
-    params[1] = timestamp; 
-
-    options.params = params; 
+    $.post('http://107.170.157.210/ServerPHP/upload.php', {timestamp: timestamp});
     options.chunkedMode = false;
     var ft = new FileTransfer();
-    ft.upload(fileURI, encodeURI("http://107.170.157.210/ServerPHP/upload.php?timestamp" + timestamp), win, fail, options);
+    ft.upload(fileURI, encodeURI("http://107.170.157.210/ServerPHP/upload.php"), win, fail, options);
 }
  
 function capturePhoto(source) {
