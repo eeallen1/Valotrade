@@ -24,7 +24,6 @@ $(document).on('pageinit', '#home', function(){
                        
                 ajax.parseJSONP(JSON.parse(result));
                
-                //$('table#resultTable tbody').html(response);
             },
              error: function (request,error) {
                 alert('Network error has occurred please try again!');
@@ -49,9 +48,9 @@ $(document).on('pageinit', '#home', function(){
      function populateData(){
           $('#post-data').empty();
         $.each(postInfo.result, function(i, row) {
-            console.log(postInfo.result); 
+            //console.log(postInfo.result); 
             if(row.ID == postInfo.id) {
-                $('#post-data').append('<li>Title: '+row.Title+'</li>' + '<li>Edition: '+row.Edition+'</li>' + '<li>Author: '+row.Author+'</li>' + '<li>Condition: '+row.Cond+'</li>' + '<li>Contact: '+row.Contact+'</li>' + '<li>For Sale: '+row.Sell+'</li>' + '<li>Trade: '+row.Trade+'</li>' + '<li>Price: '+row.Price+'</li>' + '<li>Info: '+row.Info+'</li>');        
+                $('#post-data').append('<img onerror=' + "this.src='http://107.170.157.210/EliSeniorProject/SeniorProject/www/img/book.png'" + ' style="width:100px;height:130px" src="'+row.Image+'">'+'<li>Title: '+row.Title+'</li>' + '<li>Edition: '+row.Edition+'</li>' + '<li>Author: '+row.Author+'</li>' + '<li>Condition: '+row.Cond+'</li>' + '<li>Contact: '+row.Contact+'</li>' + '<li>For Sale: '+row.Sell+'</li>' + '<li>Trade: '+row.Trade+'</li>' + '<li>Price: '+row.Price+'</li>' + '<li>Info: '+row.Info+'</li>');        
                 $('#post-data').listview('refresh');            
             }
         });
@@ -70,7 +69,7 @@ $(document).on('pageinit', '#home', function(){
      $(document).on('vclick', '#post-list li a', function(){  
 
             postInfo.id = $(this).attr('data-id');
-            console.log(postInfo.id); 
+         //   console.log(postInfo.id); 
             $.mobile.changePage( "#headline", { transition: "slide", changeHash: false });
             populateData(); 
 
@@ -85,13 +84,13 @@ $(document).on('pageinit', '#home', function(){
      var ajax = {  
         parseJSONP:function(result){  
                 postInfo.result = result;
-                console.log(result);
+              //  console.log(result);
                 $('#searchh3').text("No Results to Show"); 
                 $.each(result, function(i, row) {
                     console.log(JSON.stringify(row));  
                     $('#searchh3').text("Search Results");
                    // console.log(row.ID); 
-                    $('#post-list').append('<li><a href="" data-id="' + row.ID + '"><h3>' + row.Title + '</h3><p>Author: ' +row.Author +'<br>Edition: ' + row.Edition + ' <br>Price: $' + row.Price + '</p></a></li>');
+                    $('#post-list').append('<li><a href="" data-id="' + row.ID + '"><h3>' +'<img onerror=' + "this.src='http://107.170.157.210/EliSeniorProject/SeniorProject/www/img/book.png'" + ' style="width:50px;height:70px" src="'+row.Image+'"><br>'+ row.Title + '</h3><p>Author: ' +row.Author +'<br>Edition: ' + row.Edition + ' <br>Price: $' + row.Price + '</p></a></li>');
                 });
                 $('#post-list').listview('refresh');
 

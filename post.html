@@ -115,7 +115,7 @@
                     </div>
                     </li>
                     <li data-role="fieldcontain">
-                        <label>Contact:</label>
+                        <label>Contact Number:</label>
                         <input id="contact"data-corners="false" type="text" value="" data-clear-btn="true" placeholder="Phone number or email address.." required>
                     </li>
                     
@@ -171,12 +171,23 @@
             
             <!-- script for input fields validation --> 
             <script type="text/javascript">
+
+                jQuery(function($){
+                   $("#contact").mask("(999) 999-9999",{placeholder:" "});
+                   $("#price").mask("$9?9999",{placeholder:" "});
+                });
+
+                 jQuery(function($){
+                $('#price').bind('input propertychange', function () {
+                $(this).val($(this).val().replace(/[^0-9]/g, ''));
+                    });
+                }); 
+
               jQuery(function($){
-        
-            $('#edition').bind('input propertychange', function () {
-            $(this).val($(this).val().replace(/[^0-9]/g, ''));
-            });
-        }); 
+                $('#edition').bind('input propertychange', function () {
+                $(this).val($(this).val().replace(/[^0-9]/g, ''));
+                    });
+                }); 
             </script> 
 
     </body>
