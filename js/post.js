@@ -40,7 +40,7 @@ $(document).ready(function(){
 				cache: false,
 				success: function(result){
 					window.location.replace("index.html");
-					notification.alert("Post Success!");
+					  navigator.notification.alert('Your book has been posted!', null, 'Post Success', 'Okay');
 				}
 			});
 		}
