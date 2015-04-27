@@ -24,6 +24,7 @@ $(document).ready(function(){
 		var title = $("#title").val();
 		var edition = $("#edition").val();
 		var author =$("#author").val();
+		var category=$("#category").val(); 
 		//var condition = $('input[name=#condition]:checked').val();
 		var contact = $("#contact").val();
 		var price = $("#price").val();
@@ -33,11 +34,11 @@ $(document).ready(function(){
 
 		console.log(image); 
 		// Returns successful data submission message when the entered information is stored in database.
-		var dataString = 'title=' + title + '&edition=' + edition + '&author=' + author + '&condition=' + condition
+		var dataString = 'title=' + title + '&edition=' + edition + '&author=' + author + '&category=' + category + '&condition=' + condition
 		+'&contact=' + contact + '&trade=' + trade + '&price=' + price + '&info=' + info + '&image=' + image + '&timestamp=' + timestamp;
-		if (title == '' || edition == '' || author == '' || condition == "Unknown" || contact == '' || trade == "Unknown") 
+		if (title == '' || edition == '' || author == '' || condition == "Unknown" || contact == '' || trade == "Unknown" || category =='') 
 		{
-			//navigator.notification.alert('Please fill required fields', null, 'Incomplete Form', 'Okay'");
+			navigator.notification.alert('Please fill required fields', null, 'Incomplete Form', 'Okay'");
 		} 
 		else 
 		{
@@ -49,7 +50,7 @@ $(document).ready(function(){
 				cache: false,
 				success: function(result){
 					window.location.replace("index.html");
-					  //navigator.notification.alert('Your book has been posted!', null, 'Post Success', 'Okay');
+					  navigator.notification.alert('Your book has been posted!', null, 'Post Success', 'Okay');
 				}
 			});
 		}
