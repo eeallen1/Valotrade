@@ -17,7 +17,8 @@ function onCapturePhoto(fileURI) {
     var win = function (r) {
         var smallImage = document.getElementById('smallImage'); 
         smallImage.style.display = 'block';
-        smallImage.src = fileURI;
+        smallImage.src = "http://107.170.157.210/PicUploads/valoimg.jpg";
+        smallImage.value="http://107.170.157.210/PicUploads/valoimg.jpg"
         //clearCache();
         retries = 0;
         alert('Done!');

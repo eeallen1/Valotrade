@@ -20,9 +20,9 @@ $(document).ready(function(){
 		var trade = $("#trade").is(':checked'); 
 		var price = $("#price").val();
 		var info = $("#info").val();
-		var image = $("#image").val(); 
+		var image = $('img')[2].src 
 
-		console.log("condition " + condition); 
+		console.log(image); 
 		// Returns successful data submission message when the entered information is stored in database.
 		var dataString = 'title=' + title + '&edition=' + edition + '&author=' + author + '&condition=' + condition
 		+'&contact=' + contact + '&sell=' + sell + '&trade=' + trade + '&price=' + price + '&info=' + info + '&image=' + image;
