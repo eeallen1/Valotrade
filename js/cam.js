@@ -11,6 +11,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
  
 function onDeviceReady() {
    // smallImage = $("img")[2].attr("src").replace('http://107.170.157.210/PicUploads/'); 
+   smallImage = document.getElementById('smallImage'); 
     pictureSource = navigator.camera.PictureSourceType;
     destinationType = navigator.camera.DestinationType;
    
@@ -25,10 +26,11 @@ function onCapturePhoto(fileURI) {
     var win = function (r) {
         clearCache();
        /* var smallImage = document.getElementById('smallImage'); */
+       smallImage.src = 'http://107.170.157.210/PicUploads/'+ timestamp +'img.jpg'; 
         smallImage.style.display = 'block';
-        $("img")[2].src = 'http://107.170.157.210/PicUploads/'+ timestamp +'img.jpg';
+       /* $("img")[2].src = 'http://107.170.157.210/PicUploads/'+ timestamp +'img.jpg';*/
         retries = 0;
-        navigator.notification.alert('Your image has been posted! and src: ' +  $("img")[2].src, null, 'Upload Success', 'Okay');
+        navigator.notification.alert('Your image has been posted! ' + timestamp + 'and src: ' +  $("img")[2].src, null, 'Upload Success', 'Okay');
     }
  
     var fail = function (error) {
@@ -49,6 +51,9 @@ function onCapturePhoto(fileURI) {
     options.fileKey = "file";
     options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
     options.mimeType = "image/jpeg";
+    var params = new Object(); 
+    params.value1 = timestamp; 
+    options.params = params; 
     /*$.post('http://107.170.157.210/ServerPHP/upload.php', {timestamp: timestamp});*/
     options.chunkedMode = false;
     var ft = new FileTransfer();
