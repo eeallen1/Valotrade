@@ -18,8 +18,7 @@ function onCapturePhoto(fileURI) {
         clearCache();
         var smallImage = document.getElementById('smallImage'); 
         smallImage.style.display = 'block';
-        smallImage.src = "http://107.170.157.210/PicUploads/valoimg.jpg";
-        smallImage.value="http://107.170.157.210/PicUploads/valoimg.jpg"
+        smallImage.src = fileURI;
         retries = 0;
         navigator.notification.alert('Your image has been posted!', null, 'Upload Success', 'Okay');
     }

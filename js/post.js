@@ -21,14 +21,15 @@ $(document).ready(function(){
 		var price = $("#price").val();
 		var info = $("#info").val();
 		var image = $('img')[2].src 
+		var timestamp = new Date().getTime() / 1000;
 
 		console.log(image); 
 		// Returns successful data submission message when the entered information is stored in database.
 		var dataString = 'title=' + title + '&edition=' + edition + '&author=' + author + '&condition=' + condition
-		+'&contact=' + contact + '&sell=' + sell + '&trade=' + trade + '&price=' + price + '&info=' + info + '&image=' + image;
+		+'&contact=' + contact + '&sell=' + sell + '&trade=' + trade + '&price=' + price + '&info=' + info + '&image=' + image + '&timestamp=' + timestamp;
 		if (title == '' || edition == '' || author == '' || condition == '' || contact == '') 
 		{
-			alert("Please Fill All Fields");
+			//navigator.notification.alert('Please fill required fields', null, 'Incomplete Form', 'Okay'");
 		} 
 		else 
 		{
@@ -40,7 +41,7 @@ $(document).ready(function(){
 				cache: false,
 				success: function(result){
 					window.location.replace("index.html");
-					  navigator.notification.alert('Your book has been posted!', null, 'Post Success', 'Okay');
+					  //navigator.notification.alert('Your book has been posted!', null, 'Post Success', 'Okay');
 				}
 			});
 		}
