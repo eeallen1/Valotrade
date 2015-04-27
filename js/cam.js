@@ -3,13 +3,17 @@ var destinationType; // sets the format of returned value
 var smallImage; 
 var timestamp;
 
+
+
 document.addEventListener("deviceready", onDeviceReady, false);
+
+
  
 function onDeviceReady() {
     smallImage = document.getElementById('smallImage'); 
     pictureSource = navigator.camera.PictureSourceType;
     destinationType = navigator.camera.DestinationType;
-    timestamp = smallImage.src; 
+   
 }
  
 function clearCache() {
@@ -22,7 +26,7 @@ function onCapturePhoto(fileURI) {
         clearCache();
        /* var smallImage = document.getElementById('smallImage'); */
         smallImage.style.display = 'block';
-        smallImage.src = smallImage.src = "http://107.170.157.210/PicUploads/" + smallImage.src + "img.jpg";
+        smallImage.src = "http://107.170.157.210/PicUploads/" + timestamp + "img.jpg";
         retries = 0;
         navigator.notification.alert('Your image has been posted!', null, 'Upload Success', 'Okay');
     }
@@ -39,7 +43,8 @@ function onCapturePhoto(fileURI) {
             alert('Error. Try again!');
         }
     }
- 
+    
+
     var options = new FileUploadOptions();
     options.fileKey = "file";
     options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
@@ -53,6 +58,7 @@ function onCapturePhoto(fileURI) {
 }
  
 function capturePhoto(source) {
+    timestamp = smallImage.src; 
     navigator.camera.getPicture(onCapturePhoto, onFail, {
         quality: 50,
         destinationType: destinationType.FILE_URI, sourceType: source
