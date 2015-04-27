@@ -50,7 +50,9 @@ function onCapturePhoto(fileURI) {
     options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
     options.mimeType = "image/jpeg";
     var params = new Object();
-    params.timestamp = timestamp;
+    params[0] = "timestamp";
+    params[1] = timestamp; 
+
     options.params = params; 
     options.chunkedMode = false;
     var ft = new FileTransfer();
