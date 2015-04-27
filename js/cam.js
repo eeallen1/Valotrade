@@ -56,7 +56,7 @@ function onCapturePhoto(fileURI) {
     options.params = params; 
     options.chunkedMode = false;
     var ft = new FileTransfer();
-    ft.upload(fileURI, encodeURI("http://107.170.157.210/ServerPHP/upload.php"), win, fail, options);
+    ft.upload(fileURI, encodeURI("http://107.170.157.210/ServerPHP/upload.php?timestamp" + timestamp), win, fail, options);
 }
  
 function capturePhoto(source) {
