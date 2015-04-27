@@ -38,7 +38,7 @@ $(document).ready(function(){
 		+'&contact=' + contact + '&trade=' + trade + '&price=' + price + '&info=' + info + '&image=' + image + '&timestamp=' + timestamp;
 		if (title == '' || edition == '' || author == '' || condition == "Unknown" || contact == '' || trade == "Unknown" || category =='') 
 		{
-			navigator.notification.alert('Please fill required fields', null, 'Incomplete Form', 'Okay'");
+			//navigator.notification.alert('Please fill required fields', null, 'Incomplete Form', 'Okay'");
 		} 
 		else 
 		{
@@ -50,7 +50,7 @@ $(document).ready(function(){
 				cache: false,
 				success: function(result){
 					window.location.replace("index.html");
-					  navigator.notification.alert('Your book has been posted!', null, 'Post Success', 'Okay');
+					 navigator.notification.alert('Your book has been posted!', null, 'Post Success', 'Okay');
 				}
 			});
 		}
