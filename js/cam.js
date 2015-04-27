@@ -26,9 +26,9 @@ function onCapturePhoto(fileURI) {
         clearCache();
        /* var smallImage = document.getElementById('smallImage'); */
         smallImage.style.display = 'block';
-        smallImage.src =  timestamp +"img.jpg";
+        smallImage.src = "../../../PicUploads/"+ timestamp +"img.jpg";
         retries = 0;
-        navigator.notification.alert('Your image has been posted!' + timestamp, null, 'Upload Success', 'Okay');
+        navigator.notification.alert('Your image has been posted! ' + timestamp + ' and src: ' + smallImage.src, null, 'Upload Success', 'Okay');
     }
  
     var fail = function (error) {
@@ -56,7 +56,7 @@ function onCapturePhoto(fileURI) {
 }
  
 function capturePhoto(source) {
-    timestamp = smallImage.src; 
+    timestamp = $("#timestamp").val(); 
     navigator.camera.getPicture(onCapturePhoto, onFail, {
         quality: 50,
         destinationType: destinationType.FILE_URI, sourceType: source
