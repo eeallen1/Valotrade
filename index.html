@@ -13,18 +13,10 @@
 		
 		<!-- jQueryMobile core CSS -->
 		<link rel="stylesheet" href="css/jquery.mobile.min.css" />
-		
-		<!-- Owl Theme -->
-		<link rel="stylesheet" href="css/owl.theme.css">
-				
+			
 		<!-- NIGHTLY style -->
 		<link rel="stylesheet" href="css/nightly.css" />
 				
-		<!-- Load Google Fonts -->
-		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic|Oswald:400,700' rel='stylesheet' type='text/css'>
-		
-		<!-- Load Font Awesome Icons -->
-		<link rel="stylesheet" href="css/font-awesome.min.css">
 		
     <!-- jQuery -->
 		<script src="js/jquery.min.js"></script>
@@ -32,8 +24,6 @@
 		<!-- jQueryMobile -->
 		<script src="js/jquery.mobile.min.js"></script>
 		
-		<!-- Owl Carousel -->
-		<script src="js/owl.carousel.min.js"></script>
 		
 		<!-- NIGHTLY JS -->
 		<script src="js/nightly.js"></script>
@@ -47,31 +37,6 @@
 		 <!-- script for search ajax request --> 
        <script src="js/search.js"></script>
 	
-
-	<!-- ajax request to server -->
-<!-- 
-	<script charset="utf&minus;8" type="text/javascript">
-	function connect(e)
-	{
-	var term= {button:e};
-	$.ajax({
-	url:'http://107.170.157.210/ServerPHP/reply.php',
-	type:'POST',
-	data:term,
-	dataType:'json',
-	error:function(jqXHR,text_status,strError){
-	alert('no connection');},
-	timeout:60000,
-	success:function(data){
-	$("#result").html("");
-	for(var i in data){
-	$("#result").append("<li>"+data[i]+"</li>");
-	}
-	}
-	});}
-	</script>
-	 -->
-	<!-- end ajax -->
 
     <title>Valotrade</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -112,20 +77,9 @@
             
                 <h3>Find, Trade, or Sell Textbooks</h3>
 				<table width ="100%" border="0" cellpadding ="0" cellspacing="0">
-				<tr>
 				
-				
-				
-				<!-- <center><b>Find, Trade, or Sell Textbooks</b></center> -->
-				<!-- <center><input onclick="connect(this.value)" type="button" value="Post your book" /></center> -->
 				<center><input type="button" onclick="location.href='post.html'" value="List your book" /></center>
 				<center><input onclick="location.href='search.html'" type="button" value="Find a book" /></center>
-				<!-- <center><b>Results</b></center> -->
-				<ul id="result"></ul>
-				
-				<tr>
-				
-				
 				</table> 
 				
                 <ul data-role="listview" id="catlist" data-icon="false" data-divider-theme="a" class="nightly-navigation">

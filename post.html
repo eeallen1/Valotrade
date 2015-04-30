@@ -16,11 +16,6 @@
         <!-- NIGHTLY style -->
         <link rel="stylesheet" href="css/nightly.css" />
         
-        <!-- Load Google Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
-        
-        <!-- Load Font Awesome Icons -->
-        <link rel="stylesheet" href="css/font-awesome.min.css">
 
         <!-- jQuery -->
         <script src="js/jquery.min.js"></script>
@@ -34,15 +29,16 @@
         <!-- submit form script -->
         <script src="js/post.js"></script>
         
-        <!-- masked input jquery plugin --> 
+        <!-- masked input jquery plugin. Allows input to be restricted --> 
         <script src="js/jquery.maskedinput.min.js"></script>
         
-        <!-- phonegap JS --> 
+        <!-- phonegap JS. Note this not in the code repository. When the application is built, this file is included in the appropriate platform folder (which has copies of the other files in this repository)--> 
         <script type="text/javascript" src="phonegap.js"></script>
 
-        <!-- cam JS --> 
+        <!-- Javascript for camera use --> 
         <script type="text/javascript" src="js/cam.js"></script>
-        <!--style for required asterisk --> 
+
+        <!--style for 'asterisk --> 
         <style>
             req{ color:red;}
         </style>
@@ -176,10 +172,6 @@
                     <button onclick="capturePhoto(pictureSource.PHOTOLIBRARY);">Browse</button>
                     <label></label>
                     <button onclick="capturePhoto(pictureSource.CAMERA);">Take Picture</button>
-                 <!--    <label>Preview:</label>
-                    <img style="display:none;width:60px;height:60px;" id="smallImage" value ="" src="" /> -->
-                      <!--   <label>Image:</label>
-                    <input id="image" data-corners="false" type="file" name="image" accept="image/*"></input> -->
                     </li>
                     <li data-role="fieldcontain">
                      <label>Image Preview:</label>
@@ -196,7 +188,7 @@
                 </div>
             </div>
             
-            <!-- script for input fields validation --> 
+            <!-- script for input fields validation. since this is just using a plugin, I don't think it warrants its own JS file --> 
             <script type="text/javascript">
 
                 jQuery(function($){

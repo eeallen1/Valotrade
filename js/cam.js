@@ -25,10 +25,8 @@ var retries = 0;
 function onCapturePhoto(fileURI) {
     var win = function (r) {
         clearCache();
-       /* var smallImage = document.getElementById('smallImage'); */
-       smallImage.src = 'http://107.170.157.210/PicUploads/'+ timestamp +'img.jpg'; 
+        smallImage.src = 'http://107.170.157.210/PicUploads/'+ timestamp +'img.jpg'; //create filename/path based on timestamp created in post.js
         smallImage.style.display = 'block';
-       /* $("img")[2].src = 'http://107.170.157.210/PicUploads/'+ timestamp +'img.jpg';*/
         retries = 0;
         navigator.notification.alert('Your image has been posted! ', null, 'Upload Success', 'Okay');
     }
@@ -52,16 +50,15 @@ function onCapturePhoto(fileURI) {
     options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
     options.mimeType = "image/jpeg";
     var params = new Object(); 
-    params.value1 = timestamp; 
+    params.value1 = timestamp; //to be sent to server for storage
     options.params = params; 
-    /*$.post('http://107.170.157.210/ServerPHP/upload.php', {timestamp: timestamp});*/
     options.chunkedMode = false;
     var ft = new FileTransfer();
     ft.upload(fileURI, encodeURI("http://107.170.157.210/ServerPHP/upload.php"), win, fail, options);
 }
  
 function capturePhoto(source) {
-    timestamp = $("#timestamp").val(); 
+    timestamp = $("#timestamp").val(); //gets timestamp that was set in post.js
     navigator.camera.getPicture(onCapturePhoto, onFail, {
         quality: 50,
         destinationType: destinationType.FILE_URI, sourceType: source

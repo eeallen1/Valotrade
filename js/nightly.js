@@ -2,6 +2,7 @@
 * NIGHTLY.JS
 *
 * Main scripts file. Contains theme functionals.
+* For the purposes of my senior project, this Nightly Javascript file is used for the collapsable menu header
 *
 * Version 2.0
 * Since 2.0
