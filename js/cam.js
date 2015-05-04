@@ -10,8 +10,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
  
 function onDeviceReady() {
-   // smallImage = $("img")[2].attr("src").replace('http://107.170.157.210/PicUploads/'); 
-   smallImage = document.getElementById('smallImage'); 
+    smallImage = document.getElementById('smallImage'); 
     pictureSource = navigator.camera.PictureSourceType;
     destinationType = navigator.camera.DestinationType;
    
@@ -21,7 +20,7 @@ function clearCache() {
     navigator.camera.cleanup();
 }
  
-var retries = 0;
+var retries = 0;//sometimes the image upload fails the first try for dubious reasons
 function onCapturePhoto(fileURI) {
     var win = function (r) {
         clearCache();

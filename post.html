@@ -28,6 +28,9 @@
 
         <!-- submit form script -->
         <script src="js/post.js"></script>
+
+         <!-- gps location script -->
+        <script src="js/location.js"></script>
         
         <!-- masked input jquery plugin. Allows input to be restricted --> 
         <script src="js/jquery.maskedinput.min.js"></script>
@@ -38,7 +41,7 @@
         <!-- Javascript for camera use --> 
         <script type="text/javascript" src="js/cam.js"></script>
 
-        <!--style for 'asterisk --> 
+        <!--style for asterisk --> 
         <style>
             req{ color:red;}
         </style>
@@ -49,6 +52,7 @@
     
          <div data-role="page" data-theme='a'>
         
+        	<!-- sidebar -->
             <div data-role="panel" data-display="push" id="sidebar" data-theme="d">
                <ul data-role="listview">
                     <li data-icon='home' class="ui-icon-alt"><a href="index.html">Home</a>
@@ -62,6 +66,7 @@
                 </ul>
             </div>
             
+          <!--   head search thing -->
             <div data-role="header" data-tap-toggle="false" data-theme='a'>
                 <a href='#sidebar'data-role="none"><img src="images/menu-icon.png" alt="sidebar" id="header-menu-icon" /></a>
                 <h1 class="header-title">Valotrade</h1>
@@ -70,8 +75,9 @@
             
             
             
-            
+          <!--   main page div -->
             <div data-role="content">
+            <!-- 	input form -->
               <form method="POST" id="listing_form">
                 <ul data-role="listview">
               
@@ -178,14 +184,18 @@
                     <fieldset data-role="controlgroup" data-corners="false" data-mini="true">
                    
                       <img style="display:none;width:120px;height:100px;" id="smallImage" src="" /> 
-                      <input style="display:none;" id="timestamp" value=""/> 
+
+                      <!-- super cheap way to store values in html -->
+                      <div style="display:none;" id="timestamp" value=""/>
+                      <div style="display:none;" id="longitude" value=""/> 
+                      <div style="display:none;" id="latitude" value=""/> 
                     </fieldset>
                     </li>
                 </ul>
 
                 <button style="background-color:#4C4174; color:#FFF" type="submit" id="submit_post" form="listing_form" value="Submit">Submit</button>
 
-                </div>
+                </div><!-- end content div -->
             </div>
             
             <!-- script for input fields validation. since this is just using a plugin, I don't think it warrants its own JS file --> 

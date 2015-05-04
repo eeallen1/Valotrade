@@ -57,6 +57,7 @@ $(document).on('pageinit', '#home', function(){
 
           window.location.replace("search.html");
          $('input#search').val($(this).attr('data-id')); 
+	 console.log($(this).attr('data-id')); 
          $('form').submit(); 
 
         });

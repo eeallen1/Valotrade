@@ -1,12 +1,15 @@
 // Wait for PhoneGap to load
-
 $(document).ready(function(){
 
+
+
+	//get device location 
+    
 
 	 //arbitrary identifier for this post "session". Used to generate image url 
 	 var timestamp = parseInt(new Date().getTime() / 1000);
 	 $('#timestamp').val(timestamp);
-	 console.log(timestamp);
+	// console.log(timestamp);
 
  	// variable for condition, which is a required field. Variable is set when value of the button is changed
 	var condition = "Unknown"; 
@@ -35,10 +38,15 @@ $(document).ready(function(){
 		var price = $("#price").val();
 		var info = $("#info").val();
 		var image = $('img')[2].src 
+
+		//get longitude at latitude that were stored on html in super ghetto fasion by location.js
+		var latitude = $("#latitude").val(); 
+		var longitude = $("#longitude").val(); 
 		
 		// Returns successful data submission message when the entered information is stored in database.
 		var dataString = 'title=' + title + '&edition=' + edition + '&author=' + author + '&category=' + category + '&condition=' + condition
-		+'&contact=' + contact + '&trade=' + trade + '&price=' + price + '&info=' + info + '&image=' + image + '&timestamp=' + timestamp;
+		+'&contact=' + contact + '&trade=' + trade + '&price=' + price + '&info=' + info + '&image=' + image + '&timestamp=' + timestamp + 
+		'&latitude=' + latitude + '&longitude=' + longitude;
 		if (title == '' || edition == '' || author == '' || condition == "Unknown" || contact == '' || trade == "Unknown" || category =='') 
 		{
 			navigator.notification.alert('Please fill required fields', null, 'Incomplete Form', 'Okay');
