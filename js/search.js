@@ -1,19 +1,30 @@
-var longitude = 81.5372803; 
+var longitude = 81.5372803;//test location. Overwritten on real device.  
 var latitude = 31.3659726; 
+var tempcat = "none"; 
 
 
 
 
 $(document).on('pageinit', '#home', function(){ 
-
+    console.log(tempcat); 
+    if(tempcat!="none"){
+      $('input#search').val(tempcat);
+    }
+   
+      
     $('form').submit(function(e){
         $('#post-list').empty();
         e.preventDefault();
         makeAjaxRequest();
+	tempcat = "none"; 
         return false;
     });
 
-    function makeAjaxRequest() {
+}); 
+
+
+
+ function makeAjaxRequest() {
       //console.log($('input#search').val());
         //get result from server as JSON object
         $.ajax({
@@ -31,12 +42,8 @@ $(document).on('pageinit', '#home', function(){
                 alert('Network error has occurred please try again!');
             }
         });
-    }; 
-}); 
-
-
-
-
+  } 
+    
 
      function populateData(){
           $('#post-data').empty();
@@ -58,15 +65,29 @@ $(document).on('pageinit', '#home', function(){
         });
 
       //if any of the category listview are selected from different page
-      $(document).on('vclick', '#catlist li a', function(){ 
-
-          window.location.replace("search.html");
+     $(document).on('vclick', '#cat-list-index li a', function(){  
+	
+	 tempcat = $(this).attr('data-id');  
+	 $(this).attr('href', 'search.html'); 
+	 $(document).trigger('pageinit'); 
+	// window.location.replace("search.html");
+	 
+	// console.log(tempcat); 
+    
+        });
+      
+      
+           //if any of the category listview are selected from this page
+      $(document).on('vclick', '#cat-list li a', function(){ 
+	 
+	 $('#post-list').empty();
          $('input#search').val($(this).attr('data-id')); 
-	 console.log($(this).attr('data-id')); 
-         $('form').submit(); 
+	 //console.log($(this).attr('data-id')); 
+         makeAjaxRequest(); 
 
         });
-
+      
+      
      var postInfo = {
       id : null,
      result : null
