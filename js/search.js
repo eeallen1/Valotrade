@@ -9,6 +9,7 @@ $(document).on('pageinit', '#home', function(){
     console.log(tempcat); 
     if(tempcat!="none"){
       $('input#search').val(tempcat);
+      $('form').trigger('submit'); 
     }
    
       
@@ -68,9 +69,9 @@ $(document).on('pageinit', '#home', function(){
      $(document).on('vclick', '#cat-list-index li a', function(){  
 	
 	 tempcat = $(this).attr('data-id');  
-	 $(this).attr('href', 'search.html'); 
-	 $(document).trigger('pageinit'); 
-	// window.location.replace("search.html");
+	// $(this).attr('href', 'search.html'); 
+	// $(document).trigger('pageinit'); 
+	 window.location.replace("search.html");
 	 
 	// console.log(tempcat); 
     
